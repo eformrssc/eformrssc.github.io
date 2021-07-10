@@ -14,13 +14,13 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <title>PARP | RS St Carolus Jakarta</title>
+    <title>Klinik ISPA | RS St Carolus Jakarta</title>
   </head>
   <body id="home">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Sandhika Galih</a>
+        <a class="navbar-brand" href="#">Klinik ISPA RS ST CAROLUS JAKARTA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,10 +33,10 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link" href="#projects">Layanan Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">REGISTRASI</a>
             </li>
           </ul>
         </div>
@@ -46,9 +46,9 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img src="img/sandhika.jpg" alt="Sandhika Galih" width="200" class="rounded-circle img-thumbnail" />
-      <h1 class="display-4">Sandhika Galih</h1>
-      <p class="lead">Lecturer | Content Creator</p>
+      <img src="img/rssc.png" alt="RSSC" width="200" class="rounded-circle img-thumbnail" />
+      <h1 class="display-4">KLINIK ISPA RS ST CAROLUS JAKARTA</h1>
+      <p class="lead">Melayani dari Hati Membangkitkan Harapan</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -91,7 +91,7 @@
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>My Projects</h2>
+            <h2>Layanan Kami</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -153,7 +153,7 @@
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>Contact Me</h2>
+            <h2>Registrasi Klinik ISPA</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -165,16 +165,47 @@
             <form name="wpu-contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" required />
               </div>
+			  <div class="mb-3">
+                <label for="name" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" id="tgllahir" aria-describedby="name" name="tgllahir" required />
+              </div>
+			  <div class="mb-3"> 
+              <label for="exampleDataList" class="form-label">Jenis Identitas</label>
+			  <input class="form-control" list="datalistOptions" id="JenisIdentitas" aria-describedby="name" name="jenisID" placeholder="Ketik disini untuk mencari..." required>
+			<datalist id="datalistOptions">
+			  <option value="KTP">
+			  <option value="SIM">
+			  <option value="PASPORT">
+			  <option value="LAIN LAIN">
+			</datalist>			  
+			  </div>
+			  <div class="mb-3">
+                <label for="name" class="form-label">No Identitas</label>
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="noID" required />
+              </div>
+			  
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" required />
               </div>
               <div class="mb-3">
-                <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
+                <label for="pesan" class="form-label">Alamat</label>
+                <textarea class="form-control" id="pesan" rows="3" name="Alamat" required ></textarea>
               </div>
+			   <div class="mb-3">
+				<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="" id="invalidCheck" name="pernyataan" required>
+				<label class="form-check-label" for="invalidCheck">
+				Agree to terms and conditions
+				</label>
+			<div class="invalid-feedback">
+			You must agree before submitting.
+			</div>
+			</div>
+			</div>
+			  
               <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
 
               <button class="btn btn-primary btn-loading d-none" type="button" disabled>
@@ -204,7 +235,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzjWwvjJihKz3-24SxEnHM5XFjNPgQd_dv3uD_fgjLSp_4AAXsC6IC4C_ECvWyLkGsuBg/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzMYXyPOvqOhdB3TYMQlqNFLTKl2KdGc9m2Fr9g11pNPbDazYA/exec';
       const form = document.forms['wpu-contact-form'];
       const btnKirim = document.querySelector('.btn-kirim');
       const btnLoading = document.querySelector('.btn-loading');
