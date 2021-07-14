@@ -36,7 +36,7 @@
               <a class="nav-link" href="#projects">Layanan Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">REGISTRASI</a>
+              <a class="nav-link" href="#antriantempat">ANTRIAN TEMPAT</a>
             </li>
           </ul>
         </div>
@@ -162,37 +162,57 @@
               <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-            <form name="wpu-contact-form">
+            <form name="parp-contact-form">
               <div class="mb-3">
-                <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" required />
+                <label for="name" class="form-label">Nama Pasien</label>
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="NamaPasien" required />
               </div>
+		<div class="mb-3"> 
+              	<label for="exampleDataList" class="form-label">Jenis Kelamin</label>
+			  <input class="form-control" list="datalistOptions" id="JenisKelamin" aria-describedby="name" name="JenisKelamin" placeholder="silahkan pilih" required>
+			<datalist id="datalistOptions">
+			  <option value="Laki Laki">
+			  <option value="Perempuan">
+			</datalist>
 			  <div class="mb-3">
-                <label for="name" class="form-label">Tanggal Lahir</label>
-                <input type="date" class="form-control" id="tgllahir" aria-describedby="name" name="tgllahir" required />
+                <label for="name" class="form-label">Tanggal Lahir Pasien</label>
+                <input type="date" class="form-control" id="tgllahir" aria-describedby="name" name="TglLahir" required />
               </div>
 			  <div class="mb-3"> 
-              <label for="exampleDataList" class="form-label">Jenis Identitas</label>
-			  <input class="form-control" list="datalistOptions" id="JenisIdentitas" aria-describedby="name" name="jenisID" placeholder="Ketik disini untuk mencari..." required>
+              <label for="exampleDataList" class="form-label">Posisi Pasien</label>
+			  <input class="form-control" list="datalistOptions" id="PosisiPasien" aria-describedby="name" name="PosisiPasien" placeholder="Ketik disini untuk mencari..." required>
 			<datalist id="datalistOptions">
-			  <option value="KTP">
-			  <option value="SIM">
-			  <option value="PASPORT">
-			  <option value="LAIN LAIN">
+			  <option value="UGD ISPA RSSC">
+			  <option value="KLINIK ISPA RSSC">
+			  <option value="RS LAIN">
+			  <option value="UNIT STEPHANI">
 			</datalist>			  
 			  </div>
 			  <div class="mb-3">
-                <label for="name" class="form-label">No Identitas</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="noID" required />
+                <label for="name" class="form-label">Nama kontak</label>
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="NamaKontak" placeholder="Nama kontak yang bisa dihubungi" required />
               </div>
-			  
+			<div class="mb-3">
+                <label for="name" class="form-label">No kontak</label>
+                <input type="number" class="form-control" id="name" aria-describedby="name" name="NoKontak" placeholder="No Whatsapp kontak yang bisa dihubungi" required />
+              </div>
+			  <div class="mb-3"> 
+              <label for="exampleDataList" class="form-label">Jenis Pembayaran</label>
+			  <input class="form-control" list="datalistOptions" id="JenisBayar" aria-describedby="name" name="JenisBayar" placeholder="Silahkan pilih salah satu jenis pembayaran" required>
+			<datalist id="datalistOptions">
+			  <option value="Pribadi">
+			  <option value="Asuransi">
+			  <option value="Jaminan Perusahaan">
+			  <option value="Jaminan Pemerintah">
+			</datalist>			  
+			  </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" aria-describedby="email" name="email" required />
               </div>
               <div class="mb-3">
-                <label for="pesan" class="form-label">Alamat</label>
-                <textarea class="form-control" id="pesan" rows="3" name="Alamat" required ></textarea>
+                <label for="pesan" class="form-label">Keterangan</label>
+                <textarea class="form-control" id="pesan" rows="3" name="Keterangan" placeholder="Silahkan bila ada keterangan lain yang ingin disampaikan"></textarea>
               </div>
 			   <div class="mb-3">
 				<div class="form-check">
@@ -236,7 +256,7 @@
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzMYXyPOvqOhdB3TYMQlqNFLTKl2KdGc9m2Fr9g11pNPbDazYA/exec';
-      const form = document.forms['wpu-contact-form'];
+      const form = document.forms['parp-contact-form'];
       const btnKirim = document.querySelector('.btn-kirim');
       const btnLoading = document.querySelector('.btn-loading');
       const myAlert = document.querySelector('.my-alert');
