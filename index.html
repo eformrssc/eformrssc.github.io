@@ -252,6 +252,131 @@
     </section>
     <!-- Akhir Contact -->
 
+
+    <!-- Lihat Antrian -->
+    <section id="lihatantriantempat">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>LIHAT ANTRIAN TEMPAT</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Terimakasih!</strong> Pesan anda sudah kami terima.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="lihatantriantempat">
+              <div class="mb-3">
+	<body>
+  	<h2>Cek Antrian Tempat RS St Carolus Jakarta</h2>
+  	<div style="padding: 10px;" >
+    	<div class="form-row">
+    	<div class="form-group col-md-3">
+    	<label>Kode Booking</label>
+    	<input type="text" id="username" class="form-control" name="USERNAME" />
+	    </div>
+	    </div>
+	    <div class="form-row">
+	    <div class="form-group col-md-3">
+	    <label>Password</label><br>
+	    <input type="password" id="password" class="form-control" name="PASSWORD" />
+	    </div>
+	    </div>
+	    <button class="btn btn-primary" type="button" id="LoginButton" onclick="GetRecords()" >
+	      Login      
+	    </button>
+	    <span id="errorMessage" style="color: red" ></span>
+	  </div>
+	  <hr>
+	  <div id="displayRecords" style="padding: 10px;" >
+	  </div>
+	  </body>
+		      
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbzTsFjnqcmBYcumpnuG07aEriZqAKwdZQAum1SDxfoILz_djobqs94zHfJRSz3E3DC3wQ/exec';	
+    	fetch(scriptURL, { method: 'GET', body: new FormData(form) })
+	function GetRecords()
+    {
+      var spin = "<span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"></span>";
+      spin += " Loading...";
+      document.getElementById("LoginButton").innerHTML = spin;
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      
+      google.script.run.withSuccessHandler(function(output) 
+      {
+        console.log(output);
+        var username = output[1];
+        if(output[0] == 'TRUE')
+        {
+          google.script.run.withSuccessHandler(function(ar) 
+          {
+            console.log(ar);
+            if(ar.length > 0)
+            {
+              var displayTable = '<table class=\"table\" id=\"mainTable\" >';
+              displayTable += "<tr>";
+              displayTable += "<th>Kode Booking</th>";
+              displayTable += "<th>Keterangan</th>";
+              displayTable += "<th>Nama Pasien</th>";
+              displayTable += "<th>Jenis Kelamin</th>";
+              displayTable += "<th>Tanggal Lahir</th>";
+              displayTable += "<th>Status Info</th>";
+              displayTable += "<th>Antrian</th>";
+              displayTable += "<th>Total Antrian</th>";
+              displayTable += "</tr>";
+
+              ar.forEach(function(item, index) 
+              {
+                displayTable += "<tr>";
+                displayTable += "<td>"+item[0]+"</td>";
+                displayTable += "<td>"+item[1]+"</td>";
+                displayTable += "<td>"+item[2]+"</td>";
+                displayTable += "<td>"+item[3]+"</td>";
+                displayTable += "<td>"+item[4]+"</td>";
+                displayTable += "<td>"+item[5]+"</td>";
+                displayTable += "<td>"+item[6]+"</td>";
+                displayTable += "<td>"+item[7]+"</td>";
+                displayTable += "</tr>";
+              });
+
+              displayTable += "</table>";
+            }
+            else
+            {
+              var displayTable = "<span style=\"font-weight: bold\" >No Records Found</span>";
+            }
+
+            document.getElementById("displayRecords").innerHTML = displayTable;
+            document.getElementById("LoginButton").innerHTML = "Login";
+            document.getElementById("username").value = '';
+            document.getElementById("password").value = '';
+
+          }).GetRecords(username);
+
+          document.getElementById("errorMessage").innerHTML = "";
+          
+        }
+        else if(output[0] == 'FALSE')
+        {
+          document.getElementById("errorMessage").innerHTML = "Failed to Login";
+          document.getElementById("LoginButton").innerHTML = "Login";   
+        }
+
+      }).checkLogin(username, password);
+    }
+    </script>
+
+    <!-- Lihat Antrian Tempat -->
+
+
+
+
+
+
+
     <!-- Footer -->
     <footer class="bg-primary text-white text-center pb-5">
       <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.instagram.com/sandhikagalih/" class="text-white fw-bold">Sandhika Galih</a></p>
