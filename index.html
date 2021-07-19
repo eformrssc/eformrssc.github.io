@@ -305,13 +305,13 @@
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
       
-      google.script.run.withSuccessHandler(function(output) 
+      scriptURL2.script.run.withSuccessHandler(function(output) 
       {
         console.log(output);
         var username = output[1];
         if(output[0] == 'TRUE')
         {
-          google.script.run.withSuccessHandler(function(ar) 
+          scriptURL2.script.run.withSuccessHandler(function(ar) 
           {
             console.log(ar);
             if(ar.length > 0)
